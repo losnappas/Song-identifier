@@ -5,4 +5,4 @@ secret.js
 background/compiledInject.js
 *.swp
 */*.swp
-**/*.swp
+.*.swp
