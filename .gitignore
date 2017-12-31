@@ -3,4 +3,6 @@ web-ext-artifacts
 Session.vim
 secret.js
 background/compiledInject.js
+*.swp
+*/*.swp
 
