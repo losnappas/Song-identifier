@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Song ID options</title>
+	<link rel="stylesheet" href="options.css">
+</head>
+<body>
+	<div>
+		<div>
+			<label for="len">Secondary recording length (default 8, max 15) in seconds:</label>
+			<span>(recommend staying below 10seconds)</span>
+			<input type="text" id="len" name="len">
+		</div>
+	</div>
+	<div>
+		<div>
+			<label for="host">Host:</label>
+			<input type="text" id="host" name="host">
+		</div>
+		<div>
+			<label for="key">Access key:</label>
+			<input type="text" id="key" name="key">
+		</div>
+		<div>
+			<label for="secret">Access secret:</label>
+			<input type="text" id="secret" name="secret">
+		</div>
+	</div>
+	<p>Saves automatically. Blank lines mean you use the presets.</p> 
+	<footer>
+		<p>To get your own keys create an account at <a href="https://www.acrcloud.com">ACRCloud - Audio Fingerprinting &amp; Broadcast Monitoring Services</a>
+		<br/>It is free and there is a free plan which triggers after your trial ends.</p>
+		<p>The step 1 of this tutorial shows you everything you need except you want LINE-IN (No noise) <a href="https://www.acrcloud.com/docs/acrcloud/tutorials/identify-music-by-sound/">Recognize Music | ACRCloud Docs</a>
+		</p>
+		<p>Again, line-in is probably a better choice. Select(check) "ACRCloud Music" in the "Buckets". Project name doesn't matter. 3rd party integration doesn't matter.</p>
+		<img src="https://www.acrcloud.com/docs/wp-content/uploads/2016/04/MR-AVR.gif" width="620" height="320">
+	</footer>
+	<script src="options.js"></script>
+</body>
+</html>

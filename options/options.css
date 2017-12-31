@@ -1,0 +1,13 @@
+
+input {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+div {
+	display: block;
+}
+
+label {
+	display: inline-block;
+}

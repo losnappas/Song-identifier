@@ -1,0 +1,26 @@
+div.song-id {
+	position: fixed;
+	overflow: visible;
+	font-size: medium;
+}
+
+iframe.song-id:not(:first-child) {
+	border-top: 1px solid #4A4A4A;
+}
+
+iframe.song-id {
+	height: 2em;
+}
+
+.song-id {
+	width: 100%;
+	position: relative;
+	/*top 0;
+	left 0;*/
+	overflow: hidden;
+	box-sizing: border-box;
+	border: none;
+	z-index: 1337420;
+	display: block; /* inline-block puts magical small spaces between things in it, apparently.*/
+}
+

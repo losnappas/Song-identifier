@@ -1,0 +1,42 @@
+{
+
+  "manifest_version": 2,
+  "name": "Song id",
+  "version": "1.0",
+
+  "description": "Music recognition. Like shazam or soundhound.",
+  "homepage_url": "https://github.com/losnappas/Song-identifier",
+  "icons": {
+    "16": "icons/icon.svg",
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+
+  "applications": {
+	  "gecko": {
+		"id": "song-id@losnappas"
+	  }
+  },
+
+  "background": {
+	  "scripts": ["/background/compiledInject.js"]
+  },
+
+
+  "browser_action": {
+	  "browser_style": true,
+	  "default_title": "Identify",
+	  "default_icon": "icons/icon.svg"
+  },
+
+  "web_accessible_resources": ["/attention_bar/topbar.html"],
+
+  "permissions": [
+    "activeTab",
+    "*://*.acrcloud.com/v1/idetify",
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options/options.html"
+  }
+}

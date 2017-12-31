@@ -1,0 +1,22 @@
+{
+  "name": "addon",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "blob-to-buffer": "^1.2.6",
+    "browserify": "^14.5.0",
+    "buffer": "^5.0.8",
+    "crypto": "^1.0.1",
+    "request": "^2.83.0",
+    "url": "^0.11.0"
+  },
+  "dependencies": {
+    "top-bar.css": "^1.2.0"
+  }
+}
