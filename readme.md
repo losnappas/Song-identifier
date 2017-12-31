@@ -1,6 +1,6 @@
 # Song Identifier
 
-A firefox web extension [https://addons.mozilla.org/en-US/firefox/addon/song-identifier/]
+A firefox web extension https://addons.mozilla.org/en-US/firefox/addon/song-identifier/
 
 
 ## installation
@@ -12,11 +12,11 @@ then get yourself keys
 
 #### the keys
 
-I've hidden away my keys from github... Get your own from [acrcloud.com]
+I've hidden away my keys from github... Get your own from www.acrcloud.com
 
 then make a secret.js file like
 
-`javascript
+```javascript
 
 var secret = {
 	host: "yourhost",
@@ -25,7 +25,7 @@ var secret = {
 }
 
 module.exports = secret
-`
+```
 
 #### browserify
 
