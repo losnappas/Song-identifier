@@ -2,6 +2,7 @@
 // then wait for the sendResponse which has the parent tab URL for window.postmessaging
 browser.runtime.sendMessage({ iframe: true })
 .then(e => {
+	//console.log('hi from onap, heres e:', e)
 	window.parentURL = e.tabURL
 	
 	let len = e.len || 8

@@ -6,6 +6,8 @@ const GOOGLE = query => `https://www.google.com/search?q=${query}`
 
 browser.runtime.onMessage.addListener(message => {
 
+	//console.log("helo there")
+
 	if (message.tabURL) {
 		window.parentURL = message.tabURL
 		return
@@ -62,17 +64,30 @@ closer.addEventListener('click', () => {
 	window.parent.postMessage({
 		id: window.name
 	}, window.parentURL)
+
+	// let bg script know this frame is no longer available.
+	browser.runtime.sendMessage({
+		iframe: true,
+		closed: true
+	})
 })
 
 
+// this close procedure is slighty different..
+// handles the "go again with more time"
 again.addEventListener('click', e => {
 	//?
 	e.preventDefault()
+	browser.runtime.sendMessage({
+		iframe: true,
+		closed: true
+	}).then( () => {
+		window.parent.postMessage({
+			id: window.name,
+			len: window.len
+		}, window.parentURL)
+	})
 	
-	window.parent.postMessage({
-		id: window.name,
-		len: window.len
-	}, window.parentURL)
 })
 
 

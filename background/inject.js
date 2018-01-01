@@ -9,7 +9,7 @@ var toBuffer = require('blob-to-buffer')
 var secret = require('../secret')
 
 // A queue of attention bar ID's. Used to send messages straight to them.
-const attentionBars = []
+var attentionBars = []
 
 browser.browserAction.onClicked.addListener( () => {
 	// Basically injects into the attention-bar iframes too.
@@ -31,8 +31,18 @@ browser.browserAction.onClicked.addListener( () => {
 // - Messages from attention bar iframes to save their frameID.
 // - The audio data from content script.
 browser.runtime.onMessage.addListener((message, sender, sendResponse)=>{
+	//console.log('abs!', attentionBars)
 	// message is from an attention bar iframe
 	if (message.iframe) {
+
+		// the iframe was closed mid-countdown. Remove it from the list.
+		if (message.closed) {
+			//console.log('abs closed', attentionBars)
+			//console.log('sender', sender.frameId)
+			attentionBars = attentionBars.filter(f => f.frameId != sender.frameId)
+			//console.log(attentionBars)
+			return
+		}
 		// make a list of attention bars
 		//console.log(message)
 		attentionBars.push({
@@ -132,7 +142,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse)=>{
 	    var req = http.request(options, function (res) {
 		res.setEncoding('utf8');
 		res.on('data', function (chunk) {
-			
+			//console.log("song id about to send")
 			chunk = JSON.parse(chunk)
 			//console.log(chunk)
 			send(chunk)
@@ -158,6 +168,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse)=>{
 
 
 	    req.write(content);
+	    //console.log("end")
 	    req.end();
 	}
 
@@ -173,7 +184,10 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse)=>{
 			if (err){
 				throw err
 			}
-			recogize(host, your_access_key, your_access_secret, new Buffer(bitmap), data_type);
+			//console.log("song id about to recognize")
+			if (attentionBars.length > 0) {
+				recogize(host, your_access_key, your_access_secret, new Buffer(bitmap), data_type);
+			}
 		})
 	})
 
