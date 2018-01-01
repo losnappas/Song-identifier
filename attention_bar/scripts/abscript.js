@@ -92,5 +92,11 @@ again.addEventListener('click', e => {
 
 
 
+window.addEventListener('beforeunload', () => {
+	browser.runtime.sendMessage({
+		iframe: true,
+		closed: true
+	})
+})
 
 

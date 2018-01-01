@@ -29,7 +29,7 @@ module.exports = secret
 
 #### browserify
 
-`node_modules/.bin/browserify background/inject.js > background/compiledInject.js `
+`node_modules/.bin/browserify background/inject.js > background/song-identifier.js `
 
 
 #### the css

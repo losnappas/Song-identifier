@@ -26,12 +26,17 @@ browser.browserAction.onClicked.addListener( () => {
 
 })
 
-
+// timeout for reseting attentionbars list
+var abReset
 // Gets 2 kinds of messages.
 // - Messages from attention bar iframes to save their frameID.
 // - The audio data from content script.
 browser.runtime.onMessage.addListener((message, sender, sendResponse)=>{
 	//console.log('abs!', attentionBars)
+	// after 16 seconds of no messages, remove all entries from attentionBars list to sort of "reset"
+
+	clearTimeout(abReset)
+	abReset = setTimeout(() => attentionBars = [] , 16000)
 	// message is from an attention bar iframe
 	if (message.iframe) {
 
@@ -78,6 +83,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse)=>{
 			}
 			// id, msg, {frameid}
 			// Send result to attention bar along with current tab url.
+			//console.log('data send', data)
 			browser.tabs.sendMessage(targetFrame.tabId, {
 				data: data
 			}, {frameId: targetFrame.frameId})

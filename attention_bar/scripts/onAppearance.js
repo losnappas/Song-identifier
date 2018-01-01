@@ -17,7 +17,7 @@ browser.runtime.sendMessage({ iframe: true })
 	timer.innerHTML = +timer.innerHTML-1
 	if (timer.innerHTML==='0') {
 	   clearInterval(countDown)
-	   timer.innerHTML = 'fetching'
+	   timer.innerHTML = "fetching... <small>Sometimes the server doesn't respond. Take a 30second break if this is all you get every time.</small>"
 	}
 	}, 1000)
 
