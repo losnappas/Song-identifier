@@ -49,7 +49,9 @@ function scan(againRecLength) {
 
 		window.songIdInjected.context = audioCtx
 		// EDIT HERE
-		  let pureAudioStream = stream//new MediaStream(stream.getAudioTracks())
+		  //let pureAudioStream = stream//new MediaStream(stream.getAudioTracks())
+		  // only take in the AUDIO. Video is useless but it can be sent too. This saves the server's bandwith.
+		  let pureAudioStream = new MediaStream(stream.getAudioTracks())
 
 		   let recorder = new MediaRecorder(pureAudioStream);
 
@@ -103,6 +105,7 @@ function scan(againRecLength) {
 		   .then(() => {
 
 			   let blob = new Blob(data)
+				//console.log("test size", blob)
 			    
 			   browser.runtime.sendMessage({
 				ok: true,

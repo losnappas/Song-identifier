@@ -36,9 +36,11 @@ var abReset
 browser.runtime.onMessage.addListener((message, sender, sendResponse)=>{
 	//console.log('abs!', attentionBars)
 	// after 16 seconds of no messages, remove all entries from attentionBars list to sort of "reset"
-
+	// sort of bad. now the result doesn't have a target if it returns after 16secs from send
 	clearTimeout(abReset)
 	abReset = setTimeout(() => attentionBars = [] , 16000)
+
+
 	// message is from an attention bar iframe
 	if (message.iframe) {
 
@@ -192,7 +194,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse)=>{
 			if (err){
 				throw err
 			}
-			//console.log("song id about to recognize")
+			//console.log("song id about to recognize", bitmap)
 			if (attentionBars.length > 0) {
 				recogize(host, your_access_key, your_access_secret, new Buffer(bitmap), data_type);
 			}
