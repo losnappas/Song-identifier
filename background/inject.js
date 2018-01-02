@@ -183,9 +183,9 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse)=>{
 	gettingCreds
 	.then( saved => {
 		// Replace "###...###" below with your project's host, access_key, access_scret
-		var host = saved.host || secret.host//"identify-eu-west-1.acrcloud.com";
-		var your_access_key = saved.key || secret.key//"afc5252587a817f0e06cfd9a3aa74f63";
-		var your_access_secret = saved.secret || secret.secret//"bWjN9kvc86ASSCCDrn5klCxaN2lxSiumqh1MU9VK";
+		var host = saved.host || secret.host
+		var your_access_key = saved.key || secret.key
+		var your_access_secret = saved.secret || secret.secret
 
 		var data_type = 'audio';
 		toBuffer(message.data, (err, bitmap) => {
