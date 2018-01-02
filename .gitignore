@@ -2,9 +2,7 @@ node_modules
 web-ext-artifacts
 Session.vim
 secret.js
-background/song-identifier.js
-*.swp
-.*.swp
-*.swo
-.*.swo
+song-identifier.js
+**/.*.swp
+**/.*.swo
 
