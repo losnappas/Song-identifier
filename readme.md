@@ -36,6 +36,7 @@ module.exports = secret
 
 I manually moved the css file from node_modules/top-bar.css/top-bar.css to attention_bar/styles. You need not do a thing.
 
+#### Loading it up
 
 then go to about:debugging and load the manifest.json
 

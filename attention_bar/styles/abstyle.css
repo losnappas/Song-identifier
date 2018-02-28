@@ -50,3 +50,20 @@ a.top-bar-link {
   text-decoration: none;
 }
 
+.ad {
+	border-left: medium solid;
+	float: left;
+	padding-left: 5px;
+	border-image: linear-gradient(to bottom, rgb(0,0,0) 1%,rgb(173,255,248) 50%,rgb(0,0,0) 100%) 1;
+}
+
+.ads {
+	float:left;
+}
+
+img.acrcloud-logo {
+	height: 1.6rem;
+	display: inline-block;
+	box-sizing: border-box;
+	margin-top: -3px;
+}
