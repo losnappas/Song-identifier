@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Song id",
-  "version": "2.1",
+  "version": "2.2",
 
   "description": "Music recognition. Like shazam or soundhound.",
   "homepage_url": "https://github.com/losnappas/Song-identifier",
@@ -33,7 +33,7 @@
 
   "permissions": [
     "activeTab",
-    "*://*.acrcloud.com/v1/idetify",
+    "*://*.acrcloud.com/v1/identify",
     "storage"
   ],
   "options_ui": {
