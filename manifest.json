@@ -33,7 +33,7 @@
 
   "permissions": [
     "activeTab",
-    "*://*.acrcloud.com/v1/idetify",
+    "*://*.acrcloud.com/v1/identify",
     "storage"
   ],
   "options_ui": {

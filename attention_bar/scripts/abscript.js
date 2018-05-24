@@ -21,9 +21,12 @@ browser.runtime.onMessage.addListener(message => {
 		// No result - try again button
 		if (message.status.code === 1001) { 
 			again.classList.remove('close')
+		} else if (message.status.code === 3003) {
+			// "Limit exceeded" error
+			titleText = "Limit exceeded. Check the preferences page and make your own ACRCloud account."
 		}
 		artistText = message.status.code
-		titleText = message.status.msg
+		titleText = titleText != null ? titleText : message.status.msg
 	}
 	else {
 		let res = message.metadata.music[0]
